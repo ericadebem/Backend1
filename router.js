@@ -1,8 +1,9 @@
 import express from "express"
 
-import {getUser} from "./controler.js"
+import {getUser, postUser, deleteUser, updateUser, getAllUser} from "./controler.js"
 
 export const userRouter = express.Router()
 
-userRouter.route("/").get(getUser)
+userRouter.route("/").post(postUser).get(getAllUser)
+userRouter.route("/:id").get(getUser).delete(deleteUser).put(updateUser)
 

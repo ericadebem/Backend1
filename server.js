@@ -17,7 +17,7 @@ app.use(express.json());
 app.use("/api/v1/users", userRouter);
 
 const startServer = async () => {
-//  mongoose.connect(DB_KEY, mongooseOptions);
+mongoose.connect(DB_KEY);
   app.listen(PORT, () => {
     console.log("server is listening on port ", PORT);
   });
